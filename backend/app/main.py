@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 
+from app.config import settings
 from app.database import get_db, engine, Base
 from app.routers import auth, doctors, appointments, symptoms
 
@@ -10,10 +11,9 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="MediConnect API", version="0.1.0")
 
-# Dev-friendly CORS. Tighten this to specific origins before deploying.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=settings.cors_origins_list,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
