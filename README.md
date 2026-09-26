@@ -1,3 +1,4 @@
+## 🔗 Live Demo [mediconnect-sepia-tau.vercel.app](https://mediconnect-sepia-tau.vercel.app)
 # MediConnect — Smart Hospital Appointment & Symptom Advisor
 
 Full-stack app: patients check doctor availability, book/cancel appointments,
